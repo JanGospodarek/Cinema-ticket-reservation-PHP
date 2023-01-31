@@ -1,0 +1,155 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: rgb(250, 250, 250);
+}
+body {
+  background-color: rgb(70, 70, 70);
+}
+#top {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  z-index: 100;
+  background-color: rgb(37, 37, 37);
+}
+#top > h1,
+button {
+  margin: 10px;
+}
+button {
+  font-size: 15px;
+  padding: 7px;
+  color: black;
+  background-color: rgb(175, 175, 175);
+  border: 2px solid rgb(85, 85, 85);
+  border-radius: 10px;
+}
+button:hover {
+  background-color: rgb(155, 155, 155);
+}
+#center {
+  position: absolute;
+  top: 80px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.filmItem {
+  color: white;
+  width: 80%;
+  height: 250px;
+  border-radius: 10px;
+  display: flex;
+  margin: 6px;
+  background-color: rgb(37, 37, 37);
+
+  box-shadow: 9px 7px 24px -6px rgba(0, 0, 0, 1);
+}
+.img {
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.info {
+  padding: 10px;
+  width: 50%;
+}
+.free {
+  padding: 10px;
+  width: 50%;
+}
+.daty {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  flex-wrap: wrap;
+}
+.dataCont {
+  width: 80px;
+  padding: 3px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  margin: 3px;
+}
+#topCont {
+  width: 100%;
+  display: flex;
+}
+#imgCont {
+  margin: 20px;
+}
+#centerCont {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+#sala {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(15, 1fr);
+  gap: 5px;
+}
+#salaWrap {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(54, 54, 54);
+  border-radius: 10px;
+}
+#ekran {
+  width: 200px;
+  height: 70px;
+  background-color: black;
+}
+.krzeslo {
+  background-color: rgb(36, 36, 36);
+}
+#orderInfo {
+  background-color: rgb(36, 36, 36);
+  border-radius: 10px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 15%;
+  height: 180px;
+}
+button.krzeslo {
+  margin: 0;
+  color: white;
+}
+.dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.dialog > form {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
