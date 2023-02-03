@@ -110,6 +110,7 @@ button:hover {
   align-items: center;
   background-color: rgb(54, 54, 54);
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 #ekran {
   width: 200px;
@@ -138,6 +139,10 @@ button.krzeslo {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: rgb(44, 44, 44);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 9px 7px 24px -6px rgba(0, 0, 0, 1);
 }
 .dialog > form {
   padding: 10px;
@@ -146,10 +151,29 @@ button.krzeslo {
   align-items: center;
   flex-direction: column;
 }
+.dialog > form > p {
+  margin: 6px;
+}
+.dialog > form > p > input {
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 2px;
+}
 #main {
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+#wyloguj {
+  display: block;
+  padding: 3px;
+  margin: 10px;
+  text-decoration: none;
+  color: black;
+  background-color: rgb(175, 175, 175);
+  border: 2px solid rgb(85, 85, 85);
+  border-radius: 10px;
 }
