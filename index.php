@@ -58,7 +58,7 @@ else
     </div>
 
     <script src="./script.js"></script>
-    <script>console.log('hej')</script>
+  
     <?php include 'script.php'?>
   </body>
 </html>
