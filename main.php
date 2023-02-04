@@ -1,4 +1,4 @@
-<?php include "fetchFilms.php"?>
+<?php include "./components/fetchFilms.php"?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -50,7 +50,7 @@ console.log(sorted);
       function godzinyMap(obj){
         let str=``
 obj.godziny.forEach(el => {
-  str+=`<a href='order.php/?ID=${obj.ID}?godzina=${el}' class="dataCont">${el}</a>`
+  str+=`<a href='order.php/?ID=${obj.ID}&godzina=${el}&data=${obj.data}' class="dataCont">${el}</a>`
 });
 return str
       }
@@ -81,6 +81,7 @@ return str
       }
       for (const key in context) {
        const el=context[key];
+       console.log(el);
        filmyStr+=`
        <h2>${key}</h2>
         ${filmMap(el)}
