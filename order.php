@@ -1,4 +1,6 @@
+
 <?php include "components/fetchFilmData.php"?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,7 +36,13 @@
                     <div id="orderInfo">
                         <p>Liczba miejsc: <span id='liczbaMiejsc'></span></p>
                         <p>Cena: <span id='cena'></span>zł</p>
-                        <button id="order">Zamów</button>
+                        <!-- <form action="../handleOrder.php"  method="get"> -->
+                          <!-- <input type="text" name="miejsca" hidden id="miejsca">
+                          <input type="text" name="seans" hidden id="seans"> -->
+
+                          <a href='' id="order">Zamów</a>
+
+                        <!-- </form> -->
                     </div>
                 </div>
             </div>
@@ -42,9 +50,11 @@
       </div>
       <script>
         const seans=<?php echo json_encode($seans)?>;
+        
         console.log(seans);
         const topCont=document.getElementById('topCont')
         const sala=document.getElementById('sala')
+
         topCont.innerHTML=`
         <div id="imgCont">
                         <img src="${seans.imgUrl}" alt="" width="250px">
@@ -62,7 +72,9 @@
                         <p>${seans.godzina}</p>
                     </div>`
 
+
         miejscaArr=seans.miejsca.split(',')
+        console.log(seans);
         for (let index = 300; index >= 1; index--) {
           const btn=document.createElement('button');
           btn.classList.add('krzeslo');
@@ -73,7 +85,9 @@
           }
           sala.appendChild(btn)
         }
+
         const selected=[]
+
         sala.addEventListener('click',(e)=>{
           if(!e.target.classList.contains('krzeslo')||e.target.classList.contains('occupied')) return;
           const btn=e.target
@@ -87,17 +101,24 @@
             btn.style.backgroundColor='orange';
 
           }
-updateSummary(
 
-)        })
+          updateSummary()
+
+        })
+
+
         function updateSummary(){
           const liczba=document.getElementById('liczbaMiejsc')
           const cena=document.getElementById('cena')
+          
+          // document.getElementById('miejsca').value=`${selected.map(el=>{return el})}`
+          // document.getElementById('seans').value=JSON.stringify(seans)
+          document.getElementById('order').href=`../handleOrder.php?miejsca=${selected.map(el=>{return el})}&IDSeansu=${seans.ID}&data=${seans.data}&godzina=${seans.godzina}&zajeteMiejsca=${seans.miejsca}`
           liczba.innerText=selected.length
           cena.innerText=selected.length*12.99
         }
 
-
+        
         
 </script>
   </body>

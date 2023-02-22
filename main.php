@@ -25,6 +25,7 @@
     <script type='module'>
 
       const filmy =<?php echo json_encode($filmy)?>;
+      console.log(filmy);
       const context={}
 
       filmy.forEach(film=>{
