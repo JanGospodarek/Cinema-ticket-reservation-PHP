@@ -37,12 +37,30 @@ button:hover {
 }
 #center {
   position: absolute;
-  top: 80px;
+  top: 110px;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   flex-wrap: nowrap;
+}
+#filterSelect {
+  color: black;
+  background-color: grey;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 3px;
+}
+#filter {
+  position: absolute;
+  top: 80px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#filter > p {
+  margin: 3px;
 }
 .filmItem {
   color: white;

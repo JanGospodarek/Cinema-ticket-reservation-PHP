@@ -17,6 +17,12 @@
    echo "Wyloguj</a>";
 ?>
     </div>
+    <div id="filter">
+      <p>Wybierz datę:<select  id="filterSelect">
+        
+        </select></p>
+      
+    </div>
     <div id="center">
     
     </div>
@@ -25,9 +31,8 @@
     <script type='module'>
 
       const filmy =<?php echo json_encode($filmy)?>;
-      console.log(filmy);
+      const select=document.getElementById("filterSelect")
       const context={}
-
       filmy.forEach(film=>{
         const arr=film.godziny.split(",")
         film.godziny=arr
@@ -41,12 +46,18 @@
       const datySet=new Set(datyArr)
       datyArr= Array.from(datySet)
 const sorted =datyArr.sort()
-console.log(sorted);
+      
       sorted.forEach((el)=>{
         const filtered=filmy.filter(film=>film.data==el)
         context[el]=filtered
       })
-      let filmyStr=``;
+      let options=`<option value="all" selected>Wszystkie</option>`
+      sorted.forEach((el)=>{
+        options+=`<option value="${el}">${el}</option>`
+      })
+      select.innerHTML=options;
+
+      
       
       function godzinyMap(obj){
         let str=``
@@ -80,16 +91,37 @@ arr.forEach(element => {
 });
 return str
       }
-      for (const key in context) {
-       const el=context[key];
-       console.log(el);
+
+      function render(date){
+        let filmyStr=``;
+
+        console.log(context);
+        if(date&&date!=='all'){
+          const el=context[date];
+       filmyStr=`
+       <h2>${date}</h2>
+        ${filmMap(el)}`
+       
+        }else{
+for (const key in context) {
+            const el=context[key];
        filmyStr+=`
        <h2>${key}</h2>
         ${filmMap(el)}
        
        `
       }
+        }
+        console.log(filmyStr);
       document.getElementById('center').innerHTML=filmyStr;
+      }
+      render(undefined)
+      select.addEventListener('change',(e)=>{
+          render(e.target.value)
+      })
+
+
+
 </script>
   </body>
 </html>

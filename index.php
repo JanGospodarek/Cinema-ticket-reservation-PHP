@@ -11,13 +11,13 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT ID,LogIn,Password FROM users";
+$sql = "SELECT ID,LogIn,Password,Number FROM users";
 $result = $conn->query($sql);
 
 if(isset($_POST['login'],$_POST['password'],$_POST['number']))
 {
   while($row = $result->fetch_assoc()) {
-    if($_POST['login']==$row["LogIn"]&&$_POST['password']==$row["Password"])
+    if($_POST['login']==$row["LogIn"]&&$_POST['password']==$row["Password"]&&$_POST['number']==$row["Number"])
 	{
 		session_start();
 		$_SESSION['login']=$_POST['login'];
