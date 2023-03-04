@@ -5,10 +5,8 @@ if (!isset($_SESSION["login"])){
  exit();
 }
 // if(isset($_GET['miejsca'])) return;
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "ticket";
+include('./connect.php');
+
 
 $ID=$_GET['ID'];
 $godzina=$_GET['godzina'];

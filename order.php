@@ -110,9 +110,6 @@
         function updateSummary(){
           const liczba=document.getElementById('liczbaMiejsc')
           const cena=document.getElementById('cena')
-          
-          // document.getElementById('miejsca').value=`${selected.map(el=>{return el})}`
-          // document.getElementById('seans').value=JSON.stringify(seans)
           document.getElementById('order').href=`../handleOrder.php?miejsca=${selected.map(el=>{return el})}&IDSeansu=${seans.ID}&data=${seans.data}&godzina=${seans.godzina}&zajeteMiejsca=${seans.miejsca}`
           liczba.innerText=selected.length
           cena.innerText=selected.length*12.99

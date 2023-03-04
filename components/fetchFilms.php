@@ -4,10 +4,7 @@ if (!isset($_SESSION["login"])){
   header("Location: index.php");
  exit();
 }
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "ticket";
+include('./connect.php');
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
